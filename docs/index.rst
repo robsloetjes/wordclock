@@ -1,7 +1,8 @@
 .. toctree::
     index
     overview
-    hardware_setup
+    hardware
+    software
 
 Introduction
 =======================================
