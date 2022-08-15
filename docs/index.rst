@@ -1,9 +1,14 @@
 Wordclock driven by ESP8266 chip on Micropython
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+Here you will find information to build a wordclock inspired by QLOCKTWO (https://qlocktwo.com). 
 
-Read the tutorial here:
+Introduction
+------------
+The original concept has been adapted by Bernd Krolla into a elaborate python program running on Raspberry PI (https://rpi-wordclock.readthedocs.io). In a search for a more affordable alternative I made thorough alterations (in other words: started over) to run a wordclock program on an ESP8266 WiFi chip, running micropython. Where Krolla's program contains many plugins for showing the weather en even playing Tetris, I focused on the simplicity by only setting and showing the current time. In this documentation I wil give you insight in the process to build such a clock. 
 
-https://docs.readthedocs.io/en/stable/tutorial/
+Contents
+--------
+1. Overview
+2. Hardware
+3. Software
