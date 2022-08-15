@@ -95,12 +95,12 @@ class led_strip:
 def loop_leds():
     # Use this function if you would like to test all leds
     ledstrip = neopixel.NeoPixel(Pin(14), self.total_pixels)
-    for i in range(0,114):
+    for i in range(0,self.total_pixels):
         ledstrip[i] = (255,255,255)
         if i>0:
             ledstrip[i-1] = (0,0,0)
         ledstrip.write()
         sleep(0.05)
-    for i in range(0,114):
+    for i in range(0,self.total_pixels):
         ledstrip[i] = (0,0,0)
     ledstrip.write()
