@@ -4,6 +4,10 @@
     hardware
     software
 
+============
+Wordclock based on ESP8266 running Micropython
+============
+
 Introduction
 =======================================
 
