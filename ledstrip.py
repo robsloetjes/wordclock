@@ -14,7 +14,7 @@ if config.luxsensor:
         
 class led_strip:
     def __init__(self):
-        self.total_pixels = 114
+        self.total_pixels = config.matrix_width * config.matrix_height + 4  # Height * width + 4 minute leds
         self.ledstrip = neopixel.NeoPixel(Pin(config.ledstrip_pin), self.total_pixels)
         self.r = int(config.color[0])
         self.g = int(config.color[1])
