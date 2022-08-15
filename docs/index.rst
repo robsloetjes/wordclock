@@ -1,3 +1,8 @@
+.. toctree::
+    index
+    overview
+    hardware_setup
+
 Introduction
 =======================================
 
