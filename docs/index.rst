@@ -9,6 +9,8 @@ The original concept has been adapted by Bernd Krolla into a elaborate python pr
 
 Contents
 --------
-1. Overview
-2. Hardware
-3. Software
+.. toctree::
+    :maxdepth: 2
+    
+    index
+    overview
