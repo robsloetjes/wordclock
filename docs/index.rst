@@ -10,7 +10,5 @@ The original concept has been adapted by Bernd Krolla into a elaborate python pr
 Contents
 --------
 .. toctree::
-    :maxdepth: 2
-    
     index
     overview
