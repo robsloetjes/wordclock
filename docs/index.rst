@@ -1,4 +1,4 @@
-Template for the Read the Docs tutorial
+Wordclock driven by ESP8266 chip on Micropython
 =======================================
 
 This GitHub template includes fictional Python library
