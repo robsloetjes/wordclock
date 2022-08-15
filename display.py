@@ -45,9 +45,9 @@ class layout:
 class Display:
     def __init__(self, ledstrip):
         self.timeranges = layout()
-        self.prefix = [102,101,82,62,61]
-        self.width = 11
-        self.height = 10
+        self.prefix = config.prefix
+        self.width = config.matrix_width
+        self.height = config.matrix_height
         self.ledstrip = ledstrip
         
     def show_time(self, hour, minute):
