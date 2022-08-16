@@ -3,11 +3,10 @@ Software setup
 
 The program for the ESP8266 runs on micropython. See https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html for more information and the firmware. The firmware can be flashed by the ESPtool (https://github.com/espressif/esptool/), but I use an obscure program called uPyCraft (https://randomnerdtutorials.com/install-upycraft-ide-windows-pc-instructions/) to burn the firmware and write the program to the microcontroller. 
 
-On power up, the ESP8266 first runs boot.py once and then loops through main.py, which contains the main program. 
+On power up, the ESP8266 loops through main.py, which contains the main program. 
 
 The modules you need to run the wordclock work as follows:
 
-* boot.py - Contains garbage collection only, probably not necessary for funcioning correctly
 * main.py - Program starts with initiating the different parts/modules. When started an infinite loop is run through in which the program checks if a button is pressed (to change the time). If not it updates the time. When the time (in hours and minutes) is unchanged, nothing happens.
 * display.py - Module that takes care of translating the current time into ranges of leds that need to light up (currently Dutch matrix layout only). It also interacts with the led strip using module ledstrip.py. 
 * ledstrip.py - Makes shure that the leds will light up, also in the right color and brightness. Uses values from config.py and illuminance values from the TSL2561 sensor using tsl2561.py
