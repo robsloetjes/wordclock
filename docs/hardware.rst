@@ -15,7 +15,7 @@ For the outside border I used slats plywood of 4mm thickness. The lengths are 45
 2. Cover the backside of the front plate with paper. You can fixate it with regular tape. Picture !!!
 3. Put together the matrix of slats for the interior and glue it to the back of the front plate. Picture !!!
 4. Put together the pieces for the minute-leds. Glue them to the back of the front plate. Picture !!!
-5. Solder all electrical components and mount them in the woodwork, see separate chapters. The template for the buttons can be used to hold them in place and glue them to the front plate when alle electrical components are ready to mount.
+5. Solder all electrical components and mount them in the woodwork, see chapter electrical setup. The template for the buttons can be used to hold them in place and glue them to the front plate when alle electrical components are ready to mount.
 6. Glue the 4 blocks to the front plate for screwing the back plate to the frame
 7. Place the back plate. Make sure you have a cutout for the DC socket, 4 screwholes for screwing the back plate to the glued blocks and 1 hole for hanging the clock to a wall. Picture !!!
 
@@ -56,4 +56,4 @@ With all components soldered together you can place them in the woodwork. All el
 5. The wiring can be glued to the front plate or matrix for better fixation
 6. The leds strips, cut in strings of 10 leds, can be connected by led strip connectors and glued to the cut outs in the top and bottom slats. It could be wise to extend the strip with one length a time and test if leds do light up if you plug the power supply. 
 7. When all led strips are mounted, cover the back with duct tape. This prevents leakage of light from one character to the other. 
-8. Test if your clock works and mount the back plate. See step 7 in woodwork.
+8. Test if your clock works and mount the back plate. See step 6 and 7 in woodwork.
