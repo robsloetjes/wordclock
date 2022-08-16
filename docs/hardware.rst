@@ -21,4 +21,29 @@ Steps for creating the woodwork:
 
 Electrical setup
 ---------
-The fritzing scheme provides an overview how to solder the components. 
+The fritzing scheme provides an overview how to solder the components. It is most easy to separate the power circuit, led strip connectors and wires for communication. 
+
+Power circuit:
+It is important to understand that the led strip has contunious circuits for +5v, ground an data transfer. A WS2812B led can draw up to 60mA, which can add up to quite some current. Due to the small wire gauge in the led strip the resistance will grow and cause voltage drop. The leds at the end of the strip will be dimmer than at the beginning. This can be prevented by sourcing power to the led strip at multiple points. 
+
+The 5v power is sourced by the power supply through the female DC plug. After the plug the power wires split into a circuit to the bottom for sourcing the led strip at multiple points and to the top to provide power to the microcontroller and breakout boards. The +5v and ground for the led strip do not have to be continious, the data wire should be. 
+
+The other circuit feeds both leds on the left side (seen from the back) and provide the microcontroller, RTC en luminocity sensor with 5v DC. Also the buttons need to be connected to ground on one side.
+
+Led strip connectors:
+I use 3 pin ledstrip connectors to easily connect led strips to each other without soldering. To connect the minute leds in the left and right corners, I cut the wires to extend them. Further, each connector wires together adjacent let strips. On the bottom, on 3 locations the 5v and groud wires are stripped to solder the power wires to avoid voltage drop. 
+
+Data circuit:
+From the microcontroller, several data wires run to the components. See image ...
+
+1. D8 (GPIO 15) is the data in wire for the ledstrip, running to the data in wire at the led on the left bottom (seen from the back)
+2. D1 (GPIO 5) is SCL, serial clock for the I2C interface, running to the RTC first and continues to the TSL2561 sensor. These breakout boards can also be connected to parallel to the I2C pins.
+3. D2 (GPIO 4) is SDA, serial data for the I2C interface, runs alongside the SCL wire to the RTC and TSL2561.
+4. D5 (GPIO 14) is the back botton, most right seen from the back. This pin is pulled up by the program and is pulled to ground when the button is pushed. 
+5. D6 (GPIO 12) is the OK button, in the center of the three. Also pulled up by the program.
+6. D7 (GPIO 13) is hte left button, most left seen from the back. Also pulled up by the program.
+
+It is wise to check for short circuits with a multimeter (+5v should not be in contact with ground). Also make sure that the data wire continues in the same zigzag pattern so that numbering of characters corresponds with the program. 
+
+Mounting electrical components
+------------------------
