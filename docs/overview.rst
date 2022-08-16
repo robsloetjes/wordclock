@@ -7,6 +7,8 @@ To show the time in words, a led strip is placed behind a laser cut matrix of ch
 
 The electrical components consist of a ESP8266 NodeMCU microcontroller, DS3231 Real Time Clock to remember the time (the ESP8266's internal clock is not constant enough), TSL2561 luminocity sensor to adjust the brightness of the clock to the ambient light. Three small push buttons take care of setting the time and adjusting the color of the leds. A 5v DC power supply of 2A should be sufficient but I use a 3A version to be sure. The leds used are a WS2812B adressable led strip, in which each led can be controlled separately. The components are wired together with electrical wire and led strip connector (to save a lot of soldering).
 
+!!! Image of wordclock exterior
+
 Shopping list
 -------------
 Electrical components:
