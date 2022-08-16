@@ -9,7 +9,7 @@ At the back of the front plate, a raster of slats hold the led strips in place. 
 
 For the outside border I used slats plywood of 4mm thickness. The lengths are 450mm for the left and right side, 450-2x4=442mm for the bottom and 2 times 191mm for the top. In the middle a cutout is present for the 3 buttons. The template for the interior matrix contains parts for holding the buttons which can be glued under this cutout. 
 
-Steps for creating the woodwork:
+**Steps for creating the woodwork:**
 
 1. Paint or varnish the front plate and border slats in a color or varnish of your choice.
 2. Cover the backside of the front plate with paper. You can fixate it with regular tape. Picture !!!
@@ -23,17 +23,17 @@ Electrical setup
 ---------
 The fritzing scheme provides an overview how to solder the components. It is most easy to separate the power circuit, led strip connectors and wires for communication. 
 
-Power circuit:
+**Power circuit:**
 It is important to understand that the led strip has contunious circuits for +5v, ground an data transfer. A WS2812B led can draw up to 60mA, which can add up to quite some current. Due to the small wire gauge in the led strip the resistance will grow and cause voltage drop. The leds at the end of the strip will be dimmer than at the beginning. This can be prevented by sourcing power to the led strip at multiple points. 
 
 The 5v power is sourced by the power supply through the female DC plug. After the plug the power wires split into a circuit to the bottom for sourcing the led strip at multiple points and to the top to provide power to the microcontroller and breakout boards. The +5v and ground for the led strip do not have to be continious, the data wire should be. 
 
 The other circuit feeds both leds on the left side (seen from the back) and provide the microcontroller, RTC en luminocity sensor with 5v DC. Also the buttons need to be connected to ground on one side.
 
-Led strip connectors:
+**Led strip connectors:**
 I use 3 pin ledstrip connectors to easily connect led strips to each other without soldering. To connect the minute leds in the left and right corners, I cut the wires to extend them. Further, each connector wires together adjacent let strips. On the bottom, on 3 locations the 5v and groud wires are stripped to solder the power wires to avoid voltage drop. 
 
-Data circuit:
+**Data circuit:**
 From the microcontroller, several data wires run to the components. I recommend to solder all the wires (use an ESP8266 without GPIO header) to reduce required space and prevent errors due to wires slipping off. See image ...
 
 1. D8 (GPIO 15) is the data in wire for the ledstrip, running to the data in wire at the led on the left bottom (seen from the back)
