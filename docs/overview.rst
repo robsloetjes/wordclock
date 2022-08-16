@@ -22,6 +22,7 @@ Electrical components:
 * Electrical wire !!! mm2/ !!! AWG
 
 Woodwork:
+
 * Laser cut front plate of 450x450mm
 * Interior matrix made out of laser cut slats
 * Slats for the border
