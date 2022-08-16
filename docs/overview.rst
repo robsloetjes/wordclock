@@ -10,19 +10,19 @@ The electrical component consist of a ESP8266 NodeMCU microcontroller, DS3231 Re
 Shopping list
 -------------
 Electrical components:
-- ESP8266 (NodeMCU) microcontroller
-- DS3231 Real Time Clock (RTC)
-- TSL2561 luminocity sensor
-- 3A 5V DC power supply
-- Ledstrip with 114 WS2812B leds (30 leds/m)
-- 13 led strip connectors
-- 1 female DC plug
-- 3 small push buttons
-- Electrical wire !!! mm2/ !!! AWG
+* ESP8266 (NodeMCU) microcontroller
+* DS3231 Real Time Clock (RTC)
+* TSL2561 luminocity sensor
+* 3A 5V DC power supply
+* Ledstrip with 114 WS2812B leds (30 leds/m)
+* 13 led strip connectors
+* 1 female DC plug
+* 3 small push buttons
+* Electrical wire !!! mm2/ !!! AWG
 
 Woodwork:
-- Laser cut front plate of 450x450mm
-- Interior matrix made out of laser cut slats
-- Slats for the border
-- 4 small blocks to fixate screw on back plate
-- Back plate (+- 440x440mm)
+* Laser cut front plate of 450x450mm
+* Interior matrix made out of laser cut slats
+* Slats for the border
+* 4 small blocks to fixate screw on back plate
+* Back plate (+- 440x440mm)
