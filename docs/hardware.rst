@@ -66,3 +66,5 @@ With all components soldered together you can place them in the woodwork. All el
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%203.jpg?raw=true
 :alt: All parts put in place, but no tape applied to the back of all the leds
+
+!!! Wiring diagram fritzing
