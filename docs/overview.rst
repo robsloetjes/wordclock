@@ -13,7 +13,7 @@ Electrical components:
 
 * ESP8266 (NodeMCU) microcontroller
 * DS3231 Real Time Clock (RTC)
-* TSL2561 luminocity sensor
+* TSL2561 luminosity sensor
 * 3A 5V DC power supply
 * Ledstrip with 114 WS2812B leds (30 leds/m)
 * 13 led strip connectors
