@@ -9,6 +9,8 @@ The electrical components consist of a ESP8266 NodeMCU microcontroller, DS3231 R
 
 !!! Image of wordclock exterior
 
+Due to a maximum of laser cutting, it takes me less than 5 hours to assebmle a clock.
+
 Shopping list
 -------------
 Electrical components:
@@ -27,6 +29,6 @@ Woodwork:
 
 * Laser cut front plate of 450x450mm
 * Interior matrix made out of laser cut slats
-* Slats for the border
+* Slats for the border (could also be laser cut if desired)
 * 4 small blocks to fixate screw on back plate
 * Back plate (+- 440x440x4mm, for example plywood)
