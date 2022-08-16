@@ -72,5 +72,5 @@ With all components soldered together you can place them in the woodwork. All el
 Downloads
 ----------
 
-`Laser cut template for the front plate in Dutch <https://github.com/robsloetjes/wordclock/raw/main/docs/Front%20wordclock%20in%20Dutch.ai>`_
-`Laser cut template for the interior matrix <https://github.com/robsloetjes/wordclock/raw/main/docs/Laser%20cut%20matrix%20interior.ai>`_
+* `Laser cut template for the front plate in Dutch <https://github.com/robsloetjes/wordclock/raw/main/docs/Front%20wordclock%20in%20Dutch.ai>`_ 
+* `Laser cut template for the interior matrix <https://github.com/robsloetjes/wordclock/raw/main/docs/Laser%20cut%20matrix%20interior.ai>`_
