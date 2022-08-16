@@ -1,5 +1,4 @@
 .. toctree::
-    index
     overview
     hardware
     software
