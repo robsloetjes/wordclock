@@ -48,6 +48,7 @@ It is wise to check for short circuits with a multimeter (+5v should not be in c
 Mounting electrical components
 ------------------------
 With all components soldered together you can place them in the woodwork. All electrical components can be mounted with a glue gun. The order I perfer:
+
 1. Microcontroller with RTC and TSL2561. It is recommended to write the program to the microcontroller first and test before glueing it together. See page about software setup.
 2. Power circuits from the chips to the power plug
 3. Power circuit at the bottom of the clock for sourcing the led strips
