@@ -16,9 +16,9 @@ class led_strip:
     def __init__(self):
         self.total_pixels = config.matrix_width * config.matrix_height + 4  # Height * width + 4 minute leds
         self.ledstrip = neopixel.NeoPixel(Pin(config.ledstrip_pin), self.total_pixels)
-        self.r = int(config.color[0])
-        self.g = int(config.color[1])
-        self.b = int(config.color[2])
+        self.r = int(config.led_color[0])
+        self.g = int(config.led_color[1])
+        self.b = int(config.led_color[2])
         self.minute_led_numbers = config.minute_led_numbers
         self.brightness_factor = int(config.brightness_factor)
         self.min_brightness = int(config.min_brightness)
