@@ -27,4 +27,4 @@ Woodwork:
 * Interior matrix made out of laser cut slats
 * Slats for the border
 * 4 small blocks to fixate screw on back plate
-* Back plate (+- 440x440mm)
+* Back plate (+- 440x440x4mm, for example plywood)
