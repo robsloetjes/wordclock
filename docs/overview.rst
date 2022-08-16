@@ -10,6 +10,7 @@ The electrical component consist of a ESP8266 NodeMCU microcontroller, DS3231 Re
 Shopping list
 -------------
 Electrical components:
+
 * ESP8266 (NodeMCU) microcontroller
 * DS3231 Real Time Clock (RTC)
 * TSL2561 luminocity sensor
