@@ -57,3 +57,7 @@ With all components soldered together you can place them in the woodwork. All el
 6. The leds strips, cut in strings of 10 leds, can be connected by led strip connectors and glued to the cut outs in the top and bottom slats. It could be wise to extend the strip with one length a time and test if leds do light up if you plug the power supply. 
 7. When all led strips are mounted, cover the back with duct tape. This prevents leakage of light from one character to the other. 
 8. Test if your clock works and mount the back plate. See step 6 and 7 in woodwork.
+
+.. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%201.jpg?raw=true
+:width: 600
+:alt: Back of front plate covered with paper
