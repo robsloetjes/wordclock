@@ -2,4 +2,4 @@
 
 Wordclock driven by a ESP8266 chip on micropython.
 
-Read the documentation on `https://wordclock.readthedocs.io/ <https://wordclock.readthedocs.io/>`_
+Read the documentation on https://wordclock.readthedocs.io/
