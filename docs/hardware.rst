@@ -11,5 +11,14 @@ For the outside border I used slats plywood of 4mm thickness. The lengths are 45
 
 Steps for creating the woodwork:
 
+1. Paint or varnish the front plate and border slats in a color or varnish of your choice.
+2. Cover the backside of the front plate with paper. You can fixate it with regular tape. Picture !!!
+3. Put together the matrix of slats for the interior and glue it to the back of the front plate. Picture !!!
+4. Put together the pieces for the minute-leds and the template for the buttons. Glue them to the back of the front plate. Picture !!!
+5. Place all electrical components (see separate chapter)
+6. Glue the 4 blocks to the front plate for screwing the back plate to the frame
+7. Place the back plate. Make sure you have a cutout for the DC socket, 4 screwholes for screwing the back plate to the glued blocks and 1 hole for hanging the clock to a wall. Picture !!!
+
 Electrical setup
 ---------
+The fritzing scheme provides an overview how to solder the components. 
