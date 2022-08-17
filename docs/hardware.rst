@@ -60,6 +60,8 @@ With all components soldered together you can place them in the woodwork. All el
 7. When all led strips are mounted, cover the back with duct tape. This prevents leakage of light from one character to the other. 
 8. Test if your clock works and mount the back plate. See step 6 and 7 in woodwork.
 
+.. _Pictures:
+
 Pictures
 --------
 
