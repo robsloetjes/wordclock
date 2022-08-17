@@ -14,7 +14,7 @@ The back plate consists of a plywood plate of 440x440x4 millimeters with some cu
 **Steps for creating the woodwork:**
 
 1. Paint or varnish the front plate and border slats in a color or varnish of your choice.
-2. Cover the backside of the front plate with paper. You can fixate it with regular tape. See :ref:`picture 1<Pictures>`..
+2. Cover the backside of the front plate with paper. You can fixate it with regular tape. See picture 1.
 3. Put together the matrix of slats for the interior and glue it to the back of the front plate. See picture 2.
 4. Put together the pieces for the minute-leds. Glue them to the back of the front plate. See picture 2.
 5. Solder all electrical components and mount them in the woodwork, see chapter electrical setup. The template for the buttons can be used to hold them in place and glue them to the front plate when alle electrical components are ready to mount.
