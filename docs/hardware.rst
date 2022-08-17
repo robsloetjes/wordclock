@@ -14,12 +14,12 @@ The back plate consists of a plywood plate of 440x440x4 millimeters with some cu
 **Steps for creating the woodwork:**
 
 1. Paint or varnish the front plate and border slats in a color or varnish of your choice.
-2. Cover the backside of the front plate with paper. You can fixate it with regular tape. Picture !!!
-3. Put together the matrix of slats for the interior and glue it to the back of the front plate. Picture !!!
-4. Put together the pieces for the minute-leds. Glue them to the back of the front plate. Picture !!!
+2. Cover the backside of the front plate with paper. You can fixate it with regular tape. See picture 1.
+3. Put together the matrix of slats for the interior and glue it to the back of the front plate. See picture 2.
+4. Put together the pieces for the minute-leds. Glue them to the back of the front plate. See picture 2.
 5. Solder all electrical components and mount them in the woodwork, see chapter electrical setup. The template for the buttons can be used to hold them in place and glue them to the front plate when alle electrical components are ready to mount.
-6. Glue the 4 blocks to the front plate for screwing the back plate to the frame
-7. Place the back plate. Make sure you have a cutout for the DC socket, 4 screwholes for screwing the back plate to the glued blocks and 1 hole for hanging the clock to a wall. Picture !!!
+6. Glue the 4 blocks to the front plate for screwing the back plate to the frame. See picture 3.
+7. Place the back plate. Make sure you have a cutout for the DC socket, 4 screwholes for screwing the back plate to the glued blocks and 1 hole for hanging the clock to a wall. See picture 4
 
 Electrical setup
 ---------
@@ -49,7 +49,7 @@ It is wise to check for short circuits with a multimeter (+5v should not be in c
 
 Mounting electrical components
 ------------------------
-With all components soldered together you can place them in the woodwork. All electrical components can be mounted with a glue gun. The order I perfer:
+With all components soldered together you can place them in the woodwork. All electrical components can be mounted with a glue gun. See picture 3 for all componentes. The order of installation I perfer:
 
 1. Microcontroller with RTC and TSL2561. It is recommended to write the program to the microcontroller first and test before glueing it together. See page about software setup.
 2. Power circuits from the chips to the power plug
@@ -61,13 +61,16 @@ With all components soldered together you can place them in the woodwork. All el
 8. Test if your clock works and mount the back plate. See step 6 and 7 in woodwork.
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%201.jpg?raw=true
-:alt: Image 1: back of front plate covered with paper
+:alt: Picture 1: back of front plate covered with paper
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%202.jpg?raw=true
-:alt: Image 2: matrix of slats, without outer border
+:alt: Picture 2: matrix of slats, without outer border
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%203.jpg?raw=true
-:alt: Image 3: all parts put in place, but no tape applied to the back of all the leds
+:alt: Picture 3: all parts put in place, but no tape applied to the back of all the leds
+
+.. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Wordclock%20back.jpg?raw=true
+:alt: Picture 4: back plate of the wordclock with a cut out for the DC plug, 4 screw holes and a hole for hanging the clock
 
 !!! Wiring diagram fritzing
 
