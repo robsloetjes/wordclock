@@ -56,7 +56,7 @@ With all components soldered together you can place them in the woodwork. All el
 3. Power circuit at the bottom of the clock for sourcing the led strips
 4. Minute leds can be glued in the pieces. Cover them with duct tape to prevent leakage of light. 
 5. The wiring can be glued to the front plate or matrix for better fixation
-6. The leds strips, cut in strings of 10 leds, can be connected by led strip connectors and glued to the cut outs in the top and bottom slats. It could be wise to extend the strip with one length a time and test if leds do light up if you plug the power supply. 
+6. The leds strips, cut in strings of 10 leds, can be connected by led strip connectors and glued to the cut outs in the top and bottom slats. It could be wise to extend the strip with one length a time and test if leds do light up if you plug the power supply. See picture 5 for a wiring diagram.
 7. When all led strips are mounted, cover the back with duct tape. This prevents leakage of light from one character to the other. 
 8. Test if your clock works and mount the back plate. See step 6 and 7 in woodwork.
 
@@ -74,6 +74,9 @@ Pictures
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Wordclock%20back.jpg?raw=true
 :alt: Picture 4: back plate of the wordclock with a cut out for the DC plug, 4 screw holes and a hole for hanging the clock
+
+.. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Ledstrip%20wiring.jpg?raw=true
+:alt: Picture 5: wiring of the led strip, seen from the backside
 
 !!! Wiring diagram fritzing
 
