@@ -61,13 +61,13 @@ With all components soldered together you can place them in the woodwork. All el
 8. Test if your clock works and mount the back plate. See step 6 and 7 in woodwork.
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%201.jpg?raw=true
-:alt: Back of front plate covered with paper
+:alt: Image 1: back of front plate covered with paper
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%202.jpg?raw=true
-:alt: Matrix of slats, without outer border
+:alt: Image 2: matrix of slats, without outer border
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%203.jpg?raw=true
-:alt: All parts put in place, but no tape applied to the back of all the leds
+:alt: Image 3: all parts put in place, but no tape applied to the back of all the leds
 
 !!! Wiring diagram fritzing
 
