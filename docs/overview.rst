@@ -25,7 +25,7 @@ Electrical components:
 * 13 led strip connectors
 * 1 female DC plug
 * 3 small push buttons
-* Electrical wire !!! mm2/ !!! AWG
+* Electrical wire (22 to 24 AWG)
 
 Woodwork:
 
