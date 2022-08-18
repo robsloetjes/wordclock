@@ -7,7 +7,7 @@ The front of the wordclock shows a matrix of 11x10 characters and 4 dots for ind
 
 At the back of the front plate, a raster of slats hold the led strips in place. For a prototype I sawed these slats by hand, but a laser cut is a lot more precise and easier (3mm MDF). See a template in the downloads section. The raster has a height of 18mm. In a prototype I used a height of 15mm, but when de leds are placed 15mm behind the front plate, the middle of a character is a bit more bright than the edges. Therefore I use 18mm height now. The slats in the laser cut template are numbered from 1 (top) to 11 (bottom).
 
-For the outside border I use slats plywood of 4mm thickness. The lengths are 450mm for the left and right side, 450-2x4=442mm for the bottom and 2 times 191mm for the top. In the middle a open space is present for the 3 buttons. The template for the interior matrix contains parts for holding the buttons which can be glued under this cutout. 
+For the outside border I use slats plywood of 4mm thickness. The lengths are 450mm for the left and right side, 450-2x4=442mm for the bottom and 2 times 191mm for the top. In the middle a open space is present for the 3 buttons. The template for the interior matrix contains parts for holding the buttons which can be glued under this cutout. The outside border should be as high as the height of the raster (for example 18mm) + few millimeters for the led strips and tape + the thickness of the back plate (for example 4mm). Total height should be about 24mm in my example.
 
 The back plate consists of a plywood plate of 440x440x4 millimeters with some cut outs and holes in it. 
 
