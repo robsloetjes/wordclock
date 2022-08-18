@@ -23,7 +23,7 @@ The back plate consists of a plywood plate of 440x440x4 millimeters with some cu
 
 Electrical setup
 ---------
-The fritzing scheme provides an overview how to solder the components. It is most easy to separate the power circuit, led strip connectors and wires for communication. 
+The fritzing scheme (picture 6) provides an overview how to solder the components. It is most easy to separate the power circuit, led strip connectors and wires for communication. 
 
 **Power circuit:**
 It is important to understand that the led strip has contunious circuits for +5v, ground an data transfer. A WS2812B led can draw up to 60mA, which can add up to quite some current. Due to the small wire gauge in the led strip the resistance will grow and cause voltage drop. The leds at the end of the strip will be dimmer than at the beginning. This can be prevented by sourcing power to the led strip at multiple points. 
@@ -81,7 +81,8 @@ Pictures
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Ledstrip%20wiring.jpg?raw=true
 :alt: Picture 5: wiring of the led strip, seen from the backside
 
-!!! Wiring diagram fritzing
+.. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Schema%20woordklok%20v2.1.jpg?raw=true
+:alt: Picture 6: wiring scheme
 
 Downloads
 ----------
