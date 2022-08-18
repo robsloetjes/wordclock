@@ -18,9 +18,9 @@ Writing program to ESP8266 & debug
 ----------------------------------
 The program for the ESP8266 runs on micropython. See https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html for more information and the firmware. The firmware can be flashed by the ESPtool (https://github.com/espressif/esptool/), but I use a program called uPyCraft (https://randomnerdtutorials.com/install-upycraft-ide-windows-pc-instructions/) to burn the firmware and write the program to the microcontroller. Use the option 'Burn firmware' to write the firmware to the ESP8266. The computer needs to be connected by USB to the ESP8266. When the firmware is burned, create a serial connection through the COM port. 
 
-Copy the python files to the workSpace folder or create new files and copy the content. Each file needs to be written separately to the ESP8266 -> !!! hoe?
+Copy the python files to the workSpace folder or create new files and copy the content. Each file needs to be written separately to the ESP8266 (Tools -> Download).
 
-When downloading is complete, push the reset button on the ESP board. While the serial connection is live, you can read the print outs of the program, which makes debugging possible. It is therefore recommended to test the program with all components connected to the microcontroller before glueing it all in the frame. 
+When downloading is complete, push the reset button on the ESP board. While the serial connection is live, you can read the print outs of the program, which makes debugging possible. It is therefore recommended to test the program with all components connected to the microcontroller before glueing it all into the frame. 
 
 Normal operation
 ----------------
