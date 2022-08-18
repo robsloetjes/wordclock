@@ -28,9 +28,9 @@ The fritzing scheme provides an overview how to solder the components. It is mos
 **Power circuit:**
 It is important to understand that the led strip has contunious circuits for +5v, ground an data transfer. A WS2812B led can draw up to 60mA, which can add up to quite some current. Due to the small wire gauge in the led strip the resistance will grow and cause voltage drop. The leds at the end of the strip will be dimmer than at the beginning. This can be prevented by sourcing power to the led strip at multiple points. 
 
-The 5v power is sourced by the power supply through the female DC plug. After the plug the power wires split into a circuit to the bottom for sourcing the led strip at multiple points and to the top to provide power to the microcontroller and breakout boards. The +5v and ground for the led strip do not have to be continious, the data wire should be. 
+The 5v power is sourced by the power supply through the female DC plug. After the plug the power wires split into a circuit to the bottom for sourcing the led strip at multiple points. The +5v and ground for the led strip do not have to be continious, the data wire should be. 
 
-The other circuit feeds both leds on the left side (seen from the back) and provide the microcontroller, RTC en luminocity sensor with 5v DC. Also the buttons need to be connected to ground on one side.
+The other circuit feeds both leds on the left side (seen from the back) and provide the microcontroller, RTC en luminocity sensor with 5v DC. Also the buttons need to be connected to ground on one side. The microcontroller can be sourced by a micro USB plug (with 5v and ground soldered to the wires) or you can use the Vin- and a ground pin. The breakout boards (RTC and luminosity sensor) can also be sources direct from the power circuit. Some RTC provide soldering point to daisy chain the wires (SCL and SDA for the I2C bus, 5v and ground). You could use a 3v3 output from the microcontroller to source the 
 
 **Led strip connectors:**
 I use 3 pin ledstrip connectors to easily connect led strips to each other without soldering. To connect the minute leds in the left and right corners, I cut the wires to extend them. Further, each connector wires together adjacent let strips. On the bottom, on 3 locations the 5v and groud wires are stripped to solder the power wires to avoid voltage drop. 
