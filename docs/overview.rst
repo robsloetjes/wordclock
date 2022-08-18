@@ -15,7 +15,7 @@ Due to a maximum of laser cutting, it takes me less than 5 hours to assebmle a c
 
 Shopping list
 -------------
-Electrical components:
+Electrical components (total about €50):
 
 * ESP8266 (NodeMCU) microcontroller
 * DS3231 real time clock (RTC)
@@ -27,7 +27,7 @@ Electrical components:
 * 3 small push buttons
 * Electrical wire (22 to 24 AWG)
 
-Woodwork:
+Woodwork (total about €50 to €80):
 
 * Laser cut front plate of 450x450mm
 * Interior matrix made out of laser cut slats
