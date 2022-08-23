@@ -19,7 +19,7 @@ The back plate consists of a plywood plate of 440x440x4 millimeters with some cu
 4. Put together the pieces for the minute-leds. Glue them to the back of the front plate. See picture 2.
 5. Solder all electrical components and mount them in the woodwork, see chapter electrical setup. The template for the buttons can be used to hold them in place and glue them to the front plate when alle electrical components are ready to mount.
 6. Glue the 4 blocks to the front plate for screwing the back plate to the frame. See picture 3.
-7. Place the back plate. Make sure you have a cutout for the DC socket, 4 screwholes for screwing the back plate to the glued blocks and 1 hole for hanging the clock to a wall. See picture 4
+7. Place the back plate. Make sure you have a cutout for the DC socket, 4 screwholes for screwing the back plate to the glued blocks and 1 hole for hanging the clock to a wall. See picture 4.
 
 Electrical setup
 ---------
@@ -30,18 +30,18 @@ It is important to understand that the led strip has contunious circuits for +5v
 
 The 5v power is sourced by the power supply through the female DC plug. After the plug the power wires split into a circuit to the bottom for sourcing the led strip at multiple points. The +5v and ground for the led strip do not have to be continious, the data wire should be. 
 
-The other circuit feeds both leds on the left side (seen from the back) and provide the microcontroller, RTC en luminocity sensor with 5v DC. Also the buttons need to be connected to ground on one side. The microcontroller can be sourced by a micro USB plug (with 5v and ground soldered to the wires) or you can use the Vin- and a ground pin. The breakout boards (RTC and luminosity sensor) can also be sources direct from the power circuit. Some RTC provide soldering point to daisy chain the wires (SCL and SDA for the I2C bus, 5v and ground). You could use a 3v3 output from the microcontroller to source the 
+The other circuit feeds both leds on the left side (seen from the back) and provide the microcontroller, RTC en luminocity sensor with 5v DC. Also the buttons need to be connected to ground on one side. The microcontroller can be sourced by a micro USB plug (with 5v and ground soldered to the wires) or you can use the Vin- and a ground pin. The breakout boards (RTC and luminosity sensor) can also be sourced direct from the power circuit. Some RTC provide soldering points to daisy chain the wires (SCL and SDA for the I2C bus, 5v and ground). You could use a 3v3 output from the microcontroller to source the RTC, if desired. A TSL2561 requires 5v to function properly.
 
 **Led strip connectors:**
-I use 3 pin ledstrip connectors to easily connect led strips to each other without soldering. To connect the minute leds in the left and right corners, I cut the wires to extend them. Further, each connector wires together adjacent let strips. On the bottom, on 3 locations the 5v and groud wires are stripped to solder the power wires to avoid voltage drop. 
+I use 3 pin ledstrip connectors to easily connect led strips to each other without soldering (for example https://nl.aliexpress.com/item/32966732241.html). To connect the minute leds in the left and right corners, I extended the wires of a led strip connector. Further, connector wire together adjacent led strips. On the bottom, on 3 locations the 5v and groud wires are stripped to solder the power wires to avoid voltage drop. 
 
 **Data circuit:**
-From the microcontroller, several data wires run to the components. I recommend to solder all the wires (use an ESP8266 without GPIO header) to reduce required space and prevent errors due to wires slipping off. See image ...
+From the microcontroller, several data wires run to the components. I recommend to solder all the wires (use an ESP8266 without GPIO header) to reduce required space and prevent errors due to wires slipping off. See picture 6 for a schematic. 
 
 1. D8 (GPIO 15) is the data in wire for the ledstrip, running to the data in wire at the led on the left bottom (seen from the back)
 2. D1 (GPIO 5) is SCL, serial clock for the I2C interface, running to the RTC first and continues to the TSL2561 sensor. These breakout boards can also be connected to parallel to the I2C pins.
 3. D2 (GPIO 4) is SDA, serial data for the I2C interface, runs alongside the SCL wire to the RTC and TSL2561.
-4. D5 (GPIO 14) is the back botton, most right seen from the back. This pin is pulled up by the program and is pulled to ground when the button is pushed. 
+4. D5 (GPIO 14) is the back botton, most right seen from the back. This pin is initially pulled up by the program and is pulled to ground when the button is pushed. 
 5. D6 (GPIO 12) is the OK button, in the center of the three. Also pulled up by the program.
 6. D7 (GPIO 13) is the left button, most left seen from the back. Also pulled up by the program.
 
@@ -56,7 +56,7 @@ With all components soldered together you can place them in the woodwork. All el
 3. Power circuit at the bottom of the clock for sourcing the led strips
 4. Minute leds can be glued in the pieces. Cover them with duct tape to prevent leakage of light. 
 5. The wiring can be glued to the front plate or matrix for better fixation
-6. The leds strips, cut in strings of 10 leds, can be connected by led strip connectors and glued to the cut outs in the top and bottom slats. It could be wise to extend the strip with one length a time and test if leds do light up if you plug the power supply. See picture 5 for a wiring diagram.
+6. The leds strips, cut in strings of 10 leds, can be connected by led strip connectors and glued to the cut outs in the top and bottom slats (nr. 1 and 11). It could be wise to extend the strip with one length a time and test if leds do light up if you plug the power supply. This enables finding wiring errors. See picture 5 for a wiring diagram.
 7. When all led strips are mounted, cover the back with duct tape. This prevents leakage of light from one character to the other. 
 8. Test if your clock works and mount the back plate. See step 6 and 7 in woodwork.
 
