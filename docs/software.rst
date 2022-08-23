@@ -1,6 +1,6 @@
 Software setup
 =================
-The program for the ESP8266 runs on micropython. See next chapter for more information how to program it to the microcontroller.
+The program for the ESP8266 runs on micropython. See next chapter for more information how to program the python files (https://github.com/robsloetjes/wordclock) to the microcontroller.
 
 On power up, the ESP8266 loops through main.py, which contains the main program. 
 
@@ -16,7 +16,7 @@ The modules you need to run the wordclock work as follows:
 
 Writing program to ESP8266 & debug
 ----------------------------------
-The program for the ESP8266 runs on micropython. See https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html for more information and the firmware. The firmware can be flashed by the ESPtool (https://github.com/espressif/esptool/), but I use a program called uPyCraft (https://randomnerdtutorials.com/install-upycraft-ide-windows-pc-instructions/) to burn the firmware and write the program to the microcontroller. Use the option 'Burn firmware' to write the firmware to the ESP8266. The computer needs to be connected by USB to the ESP8266. When the firmware is burned, create a serial connection through the COM port. 
+The program for the ESP8266 runs on micropython. See https://docs.micropython.org/en/latest/esp8266/tutorial/intro.html for more information and the firmware. The firmware can be flashed by the ESPtool (https://github.com/espressif/esptool/), but I use a program called uPyCraft (https://randomnerdtutorials.com/install-upycraft-ide-windows-pc-instructions/) to burn the firmware and write the program to the microcontroller. Use the option 'Burn firmware' to write the Micropython firmware to the ESP8266. The computer needs to be connected by USB to the ESP8266. When the firmware is burned, create a serial connection through the COM port (e.g. using uPyCraft). 
 
 Copy the python files to the workSpace folder or create new files and copy the content. Each file needs to be written separately to the ESP8266 (Tools -> Download).
 
@@ -33,3 +33,5 @@ When the power adapter is plugged in, the ESP8266 will boot in about 5 seconds. 
 4. You now can change the yellow value of the clock using the back and forward button. At default the led color in RGB is 255,255,50 but you can change the 50 to the desired type of white to yellow. Push the OK button when ready. The clock wil turn off for 2 seconds and then show the time in the new color. 
 
 When you pull the plug of the power supply, the RTC will keep track of the time using the CR2032 battery. Once power is restored, the correct time should show up.
+
+To compensate for daylight saving time, push the back or forward button once to change the current time by one hour.
