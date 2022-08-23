@@ -21,17 +21,3 @@ The program for the ESP8266 runs on micropython. See https://docs.micropython.or
 Copy the python files to the workSpace folder or create new files and copy the content. Each file needs to be written separately to the ESP8266 (Tools -> Download).
 
 When downloading is complete, push the reset button on the ESP board. While the serial connection is live, you can read the print outs of the program, which makes debugging possible. It is therefore recommended to test the program with all components connected to the microcontroller before glueing it all into the frame. 
-
-Normal operation
-----------------
-
-When the power adapter is plugged in, the ESP8266 will boot in about 5 seconds. When it is the first power up, the clock shows the time since putting the battery in the RTC. To change the time, hold the OK button until "HET IS" flashes 3 times. The clock wil enter time setting mode, which is a 4 step proces elaborated in tools.py (function set_time()). 
-
-1. Set the time in hours using de back and forward button. When the correct hour is selected, push the OK button, the time in hours will flash.
-2. Set the time in 5 minutes using the back and forward button. When the correct time (rounded down to 5 minutes) is selected, push the OK button, the time will flash.
-3. Set the exact time for the minute leds using the back and forward button. When the correct time is selected, push the OK button, "HET IS" and the minute leds will flash.
-4. You now can change the yellow value of the clock using the back and forward button. At default the led color in RGB is 255,255,50 but you can change the 50 to the desired type of white to yellow. Push the OK button when ready. The clock wil turn off for 2 seconds and then show the time in the new color. 
-
-When you pull the plug of the power supply, the RTC will keep track of the time using the CR2032 battery. Once power is restored, the correct time should show up.
-
-To compensate for daylight saving time, push the back or forward button once to change the current time by one hour.
