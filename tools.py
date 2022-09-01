@@ -8,6 +8,7 @@ import math
 i2c = I2C(sda = Pin(config.sda), scl=Pin(config.scl))
 try:
     ds = DS3231.DS3231(i2c)
+    print('RTC initiated')
 except:
     print('Problem with RTC')
 
