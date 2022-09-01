@@ -15,15 +15,15 @@ The back plate consists of a plywood plate of 440x440x4 millimeters with some cu
 
 1. Paint or varnish the front plate and border slats in a color or varnish of your choice.
 2. Cover the backside of the front plate with paper. You can fixate it with regular tape. See picture 1.
-3. Put together the matrix of slats for the interior and glue it to the back of the front plate. See picture 2.
+3. Put together the matrix of slats for the interior and glue it to the back of the front plate. See picture 2 and 3.
 4. Put together the pieces for the minute-leds. Glue them to the back of the front plate. See picture 2.
 5. Solder all electrical components and mount them in the woodwork, see chapter electrical setup. The template for the buttons can be used to hold them in place and glue them to the front plate when alle electrical components are ready to mount.
-6. Glue the 4 blocks to the front plate for screwing the back plate to the frame. See picture 3.
-7. Place the back plate. Make sure you have a cutout for the DC socket, 4 screwholes for screwing the back plate to the glued blocks and 1 hole for hanging the clock to a wall. See picture 4.
+6. Glue the 4 blocks to the front plate for screwing the back plate to the frame. See picture 4.
+7. Place the back plate. Make sure you have a cutout for the DC socket, 4 screwholes for screwing the back plate to the glued blocks and 1 hole for hanging the clock to a wall. See picture 5.
 
 Electrical setup
 ---------
-The fritzing scheme (picture 6) provides an overview how to solder the components. It is most easy to separate the power circuit, led strip connectors and wires for communication. 
+The fritzing scheme (picture 7) provides an overview how to solder the components. It is most easy to separate the power circuit, led strip connectors and wires for communication. 
 
 **Power circuit:**
 It is important to understand that the led strip has contunious circuits for +5v, ground an data transfer. A WS2812B led can draw up to 60mA, which can add up to quite some current. Due to the small wire gauge in the led strip the resistance will grow and cause voltage drop. The leds at the end of the strip will be dimmer than at the beginning. This can be prevented by sourcing power to the led strip at multiple points. 
@@ -36,7 +36,7 @@ The other circuit feeds both leds on the left side (seen from the back) and prov
 I use 3 pin ledstrip connectors to easily connect led strips to each other without soldering (for example https://nl.aliexpress.com/item/32966732241.html). To connect the minute leds in the left and right corners, I extended the wires of a led strip connector. Further, connector wire together adjacent led strips. On the bottom, on 3 locations the 5v and groud wires are stripped to solder the power wires to avoid voltage drop. 
 
 **Data circuit:**
-From the microcontroller, several data wires run to the components. I recommend to solder all the wires (use an ESP8266 without GPIO header) to reduce required space and prevent errors due to wires slipping off. See picture 6 for a schematic. 
+From the microcontroller, several data wires run to the components. I recommend to solder all the wires (use an ESP8266 without GPIO header) to reduce required space and prevent errors due to wires slipping off. See picture 7 for a schematic. 
 
 1. D8 (GPIO 15) is the data in wire for the ledstrip, running to the data in wire at the led on the left bottom (seen from the back)
 2. D1 (GPIO 5) is SCL, serial clock for the I2C interface, running to the RTC first and continues to the TSL2561 sensor. These breakout boards can also be connected to parallel to the I2C pins.
@@ -49,14 +49,14 @@ It is wise to check for short circuits with a multimeter (+5v should not be in c
 
 Mounting electrical components
 ------------------------
-With all components soldered together you can place them in the woodwork. All electrical components can be mounted with a glue gun. See picture 3 for all componentes. The order of installation I perfer:
+With all components soldered together you can place them in the woodwork. All electrical components can be mounted with a glue gun. See picture 4 for all componentes. The order of installation I perfer:
 
 1. Microcontroller with RTC and TSL2561. It is recommended to write the program to the microcontroller first and test before glueing it together. See page about software setup.
 2. Power circuits from the chips to the power plug
 3. Power circuit at the bottom of the clock for sourcing the led strips
 4. Minute leds can be glued in the pieces. Cover them with duct tape to prevent leakage of light. 
 5. The wiring can be glued to the front plate or matrix for better fixation
-6. The leds strips, cut in strings of 10 leds, can be connected by led strip connectors and glued to the cut outs in the top and bottom slats (nr. 1 and 11). It could be wise to extend the strip with one length a time and test if leds do light up if you plug the power supply. This enables finding wiring errors. See picture 5 for a wiring diagram.
+6. The leds strips, cut in strings of 10 leds, can be connected by led strip connectors and glued to the cut outs in the top and bottom slats (nr. 1 and 11). It could be wise to extend the strip with one length a time and test if leds do light up if you plug the power supply. This enables finding wiring errors. See picture 6 for a wiring diagram.
 7. When all led strips are mounted, cover the back with duct tape. This prevents leakage of light from one character to the other. 
 8. Test if your clock works and mount the back plate. See step 6 and 7 in woodwork.
 
@@ -70,19 +70,22 @@ Pictures
 :alt: Picture 1: back of front plate covered with paper
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%202.jpg?raw=true
-:alt: Picture 2: matrix of slats, without outer border
+:alt: Picture 2: matrix of slats
+
+.. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Matrix%20slat%20numbering.jpg?raw=true
+:alt: Picture 3: numbering of the slats
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Hardware%203.jpg?raw=true
-:alt: Picture 3: all parts put in place, but no tape applied to the back of all the leds
+:alt: Picture 4: all parts put in place, but no tape applied to the back of all the leds
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Wordclock%20back.jpg?raw=true
-:alt: Picture 4: back plate of the wordclock with a cut out for the DC plug, 4 screw holes and a hole for hanging the clock
+:alt: Picture 5: back plate of the wordclock with a cut out for the DC plug, 4 screw holes and a hole for hanging the clock
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Ledstrip%20wiring.jpg?raw=true
-:alt: Picture 5: wiring of the led strip, seen from the backside
+:alt: Picture 6: wiring of the led strip, seen from the backside
 
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Schema%20woordklok%20v2.1.jpg?raw=true
-:alt: Picture 6: wiring scheme
+:alt: Picture 7: wiring scheme
 
 Downloads
 ----------
