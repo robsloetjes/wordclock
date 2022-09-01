@@ -9,6 +9,7 @@ if config.luxsensor:
     i2c = I2C(sda = Pin(config.sda), scl= Pin(config.scl))
     try:
         luxsensor = tsl2561.TSL2561(i2c)
+        print('Luxsensor initiated')
     except:
         print('Error in lux sensor')
         
