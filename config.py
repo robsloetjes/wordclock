@@ -1,8 +1,8 @@
 # Variables free to change (no operational issues expected):
 
 brightness_factor = 30  # Brightness in percents
-min_brightness = 80  # 0-100%
-max_brightness = 10  # 0-100%
+min_brightness = 10  # 0-100%
+max_brightness = 80  # 0-100%
 led_color = [255,255,50]
 
 luxsensor = True  # Change to false if no light sensor is connected, brightness will remain at 50% all time
