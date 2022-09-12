@@ -6,6 +6,7 @@ max_brightness = 80  # 0-100%
 led_color = [255,255,50]
 
 luxsensor = True  # Change to false if no light sensor is connected, brightness will remain at 50% all time
+luxsensor_type = 'BH1750' # 'TSL2561' or 'BH1750'
 
 scl = 5 # D1
 sda = 4 # D2
