@@ -8,8 +8,11 @@ from time import sleep
 if config.luxsensor:
     i2c = I2C(sda = Pin(config.sda), scl= Pin(config.scl))
     try:
-        luxsensor = tsl2561.TSL2561(i2c)
-        print('Luxsensor initiated')
+        if config.luxsensor_type == 'TSL2561':
+            luxsensor = tsl2561.TSL2561(i2c)
+            print('Luxsensor initiated')
+        else:
+            luxsensor = 
     except:
         print('Error in lux sensor')
         
@@ -42,7 +45,10 @@ class led_strip:
     def getlux(self):
         if config.luxsensor:
             try:
-                lux = luxsensor.read()
+                if config.luxsensor_type == 'TSL2561':
+                    lux = luxsensor.read()
+                else
+                    lux = bh1750.sample(i2c)
             except:
                 print('Fout in luxsensor')
             return lux
