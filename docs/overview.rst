@@ -32,11 +32,13 @@ Electrical components (total about €50):
 * ESP8266 (NodeMCU) microcontroller
 * DS3231 real time clock (RTC)
 * TSL2561 luminosity sensor
+* SN74AHCT125N (or similar) logic level shifter
 * 3A 5V DC power supply
 * Ledstrip with 114 WS2812B leds (30 leds/m)
 * 13 led strip connectors
 * 1 female DC plug
 * 3 small push buttons
+* 1 300-500 Ohm resistor
 * Electrical wire (22 to 24 AWG)
 
 Woodwork (total about €50 to €80):
