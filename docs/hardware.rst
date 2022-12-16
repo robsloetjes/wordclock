@@ -84,7 +84,7 @@ Pictures
 .. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Ledstrip%20wiring.jpg?raw=true
 :alt: Picture 6: wiring of the led strip, seen from the backside
 
-.. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Schema%20woordklok%20v2.1.jpg?raw=true
+.. image:: https://github.com/robsloetjes/wordclock/blob/main/docs/Schema%20woordklok%20v2.2.png?raw=true
 :alt: Picture 7: wiring scheme
 
 Downloads
