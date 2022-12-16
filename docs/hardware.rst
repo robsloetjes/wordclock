@@ -38,7 +38,7 @@ I use 3 pin ledstrip connectors to easily connect led strips to each other witho
 **Data circuit:**
 From the microcontroller, several data wires run to the components. I recommend to solder all the wires (use an ESP8266 without GPIO header) to reduce required space and prevent errors due to wires slipping off. See picture 7 for a schematic. 
 
-1. D8 (GPIO 15) is the data in wire for the ledstrip, running to the data in wire at the led on the left bottom (seen from the back)
+1. D8 (GPIO 15) is the data in wire for the ledstrip, running to the logic level shifter to shift the logic signal from 3.3v to the required 5v of the WS2812B leds. My clock works without this level shifter, but when the voltage drops a little the signal could be disrupted. From the logic level shifter, a wire runs through a small 300-500 Ohm resistor to the data in wire at the led on the left bottom (seen from the back)
 2. D1 (GPIO 5) is SCL, serial clock for the I2C interface, running to the RTC first and continues to the TSL2561 sensor. These breakout boards can also be connected to parallel to the I2C pins.
 3. D2 (GPIO 4) is SDA, serial data for the I2C interface, runs alongside the SCL wire to the RTC and TSL2561.
 4. D5 (GPIO 14) is the back botton, most right seen from the back. This pin is initially pulled up by the program and is pulled to ground when the button is pushed. 
