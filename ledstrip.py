@@ -11,8 +11,6 @@ if config.luxsensor:
         if config.luxsensor_type == 'TSL2561':
             luxsensor = tsl2561.TSL2561(i2c)
             print('Luxsensor initiated')
-        else:
-            luxsensor = 
     except:
         print('Error in lux sensor')
         
@@ -27,8 +25,6 @@ class led_strip:
         self.brightness_factor = int(config.brightness_factor)
         self.min_brightness = int(config.min_brightness)
         self.max_brightness = int(config.max_brightness)
-        self.ledrange_old = []
-        self.ledrange_minutes_old = []
     
     def renew_colors(self,r,g,b):
         self.r = int(r)
@@ -38,8 +34,6 @@ class led_strip:
     def reset(self): # turn led strip off
         for i in range(0,self.total_pixels):
             self.ledstrip[i] = (0,0,0)
-        self.ledrange_old = []
-        self.ledrange_minutes_old = []
         self.ledstrip.write()
        
     def getlux(self):
@@ -47,7 +41,7 @@ class led_strip:
             try:
                 if config.luxsensor_type == 'TSL2561':
                     lux = luxsensor.read()
-                else
+                else:
                     lux = bh1750.sample(i2c)
             except:
                 print('Fout in luxsensor')
@@ -82,22 +76,19 @@ class led_strip:
             if i in ledrange:
                 # Turn led on
                 self.ledstrip[i] = (r_led,g_led,b_led)
-            if i not in ledrange and i in self.ledrange_old:
+            else: 
                 # Turn led off
                 self.ledstrip[i] = (0,0,0)
-                #print(str(i)+' moet uit maar stond dit nog niet')
         
         # Check for each minute leds too
         for i in self.minute_led_numbers:
-            if i in ledminuterange:
+            if i in ledminuterange: 
                 self.ledstrip[i] = (r_led,g_led,b_led)
-            if i not in ledminuterange and i in self.ledrange_minutes_old:
+            else: 
                 self.ledstrip[i] = (0,0,0)
         
         self.ledstrip.write()
         
-        self.ledrange_old = ledrange
-        self.ledrange_minutes_old = ledminuterange
 
 def loop_leds():
     # Use this function if you would like to test all leds
@@ -111,3 +102,4 @@ def loop_leds():
     for i in range(0,self.total_pixels):
         ledstrip[i] = (0,0,0)
     ledstrip.write()
+

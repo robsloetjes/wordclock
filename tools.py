@@ -17,7 +17,7 @@ def current_time():
         return ds.Time()[0], ds.Time()[1], ds.Time()[2]
     except:
         print('Cannot collect time')
-        return 0,0
+        return 0,0,0
 
 def edit_config(old, new):
     fin = open('config.py')
@@ -205,3 +205,4 @@ def set_time(display):
     display.ledstrip.reset()
     time.sleep(2)
     display.show_time(new_hour,new_minutes)
+

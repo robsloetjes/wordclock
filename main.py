@@ -13,7 +13,6 @@ try:
       # Initiate the ledstrip, display and set current time
       self.ledstrip = ledstrip.led_strip()
       self.display = display.Display(self.ledstrip)
-      self.hour,self.minute,self.second = tools.current_time()
       # Initiate buttons
       self.button_ok = Pin(config.button_ok, Pin.IN, Pin.PULL_UP)
       self.button_back = Pin(config.button_back, Pin.IN, Pin.PULL_UP)
@@ -25,12 +24,10 @@ try:
     def woordklok_update(self, force=False):
       hour,minute,second = tools.current_time()
 
-      if self.hour != hour or self.minute != minute or (second%5)==0 or force == True:
-        # Change in time, change clock
-        self.hour = hour
-        self.minute = minute
+      if second%5==0 or force == True:
+        # Update each 5 seconds so if clock shows jabberish, it is resolved quickly
         self.display.show_time(hour, minute)
-        print(str(hour)+':'+str(minute))
+        # print(str(hour)+':'+str(minute))
 
     def run(self):
       while True:
@@ -45,7 +42,7 @@ try:
           print('Button next pushed, set one hour forward')
           tools.set_hour_forward(self.display)
         self.woordklok_update()
-        sleep(.25)
+        sleep(1)
 
   wordclock = Wordclock()
   wordclock.run()
@@ -60,4 +57,5 @@ except Exception as e:
   time.sleep(15)
   import machine
   machine.reset()
+
 
