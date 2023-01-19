@@ -14,7 +14,7 @@ except:
 
 def current_time():
     try: 
-        return ds.Time()[0], ds.Time()[1]
+        return ds.Time()[0], ds.Time()[1], ds.Time()[2]
     except:
         print('Cannot collect time')
         return 0,0
