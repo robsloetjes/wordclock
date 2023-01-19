@@ -13,7 +13,7 @@ try:
       # Initiate the ledstrip, display and set current time
       self.ledstrip = ledstrip.led_strip()
       self.display = display.Display(self.ledstrip)
-      self.hour,self.minute = tools.current_time()
+      self.hour,self.minute,self.second = tools.current_time()
       # Initiate buttons
       self.button_ok = Pin(config.button_ok, Pin.IN, Pin.PULL_UP)
       self.button_back = Pin(config.button_back, Pin.IN, Pin.PULL_UP)
@@ -23,9 +23,9 @@ try:
       print('Started Wordclock')
 
     def woordklok_update(self, force=False):
-      hour,minute = tools.current_time()
+      hour,minute,second = tools.current_time()
 
-      if self.hour != hour or self.minute != minute or force == True:
+      if self.hour != hour or self.minute != minute or (second%5)==0 or force == True:
         # Change in time, change clock
         self.hour = hour
         self.minute = minute
