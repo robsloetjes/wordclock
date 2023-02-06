@@ -43,7 +43,7 @@ def limit(value, min, max):
     return limitvalue
 
 def set_hour_back(display):
-    new_hour,minute = current_time()
+    new_hour,minute,second = current_time()
     new_hour -= 1
     if new_hour < 0:
         new_hour = 23    
@@ -52,7 +52,7 @@ def set_hour_back(display):
     time.sleep(2)
     
 def set_hour_forward(display):
-    new_hour,minute = current_time()
+    new_hour,minute,second = current_time()
     new_hour += 1
     if new_hour > 23:
         new_hour = 0    
@@ -75,7 +75,7 @@ def set_time(display):
     time.sleep(0.5)
     
     print('Start set time mode')
-    hour,minute = current_time()
+    hour,minute,second = current_time()
     new_hour = hour
     new_minute = 0
     
