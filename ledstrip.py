@@ -2,6 +2,7 @@ import config
 import math
 import neopixel
 import tsl2561
+import bh1750
 from machine import I2C, Pin
 from time import sleep
 
