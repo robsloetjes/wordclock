@@ -1,6 +1,6 @@
 # Variables free to change (no operational issues expected):
 
-brightness_factor = 30  # Brightness in percents
+default_brightness = 30  # Brightness in percents
 min_brightness = 10  # 0-100%
 max_brightness = 80  # 0-100%
 led_color = [255,255,50]
