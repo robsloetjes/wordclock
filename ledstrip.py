@@ -19,18 +19,16 @@ class led_strip:
     def __init__(self):
         self.total_pixels = config.matrix_width * config.matrix_height + 4  # Height * width + 4 minute leds
         self.ledstrip = neopixel.NeoPixel(Pin(config.ledstrip_pin), self.total_pixels)
-        self.r = int(config.led_color[0])
-        self.g = int(config.led_color[1])
-        self.b = int(config.led_color[2])
+        self.color = config.led_color[:]
+        self.brightness_color = config.led_color[:]
         self.minute_led_numbers = config.minute_led_numbers
-        self.brightness_factor = int(config.brightness_factor)
+        self.default_brightness = int(config.default_brightness)
+        self.brightness = self.default_brightness
         self.min_brightness = int(config.min_brightness)
         self.max_brightness = int(config.max_brightness)
     
-    def renew_colors(self,r,g,b):
-        self.r = int(r)
-        self.g = int(g)
-        self.b = int(b)
+    def renew_colors(self,color):
+        self.color = [int(color[0]), int(color[1]), int(color[2])]
     
     def reset(self): # turn led strip off
         for i in range(0,self.total_pixels):
@@ -45,38 +43,37 @@ class led_strip:
                 else:
                     lux = bh1750.sample(i2c)
             except:
-                print('Fout in luxsensor')
+                print('Fout in luxsensor 2')
             return lux
         else:
             return '"False"'
     
-    def program_pixel(self, ledrange, ledminuterange): # light up leds according to the current time
-        if config.luxsensor:
-            try:
-                lux = luxsensor.read()
-                brightness = lux * self.brightness_factor / 100
-            except:
-                print('Fout in luxsensor')
-                brightness = self.brightness_factor / 50
-        else:
-            brightness = self.brightness_factor / 50
+    def program_pixel(self, ledrange, ledminuterange, refresh_brightness = True): # light up leds according to the current time
+        if refresh_brightness:
+          if config.luxsensor:
+              self.brightness = self.getlux();
+              # print("Measured brightness "+ str(self.brightness));
+          else:
+              self.brightness = self.default_brightness
 
         # Brightness should remain between 0 and 1
-        if brightness > self.max_brightness/100 or brightness > 1:
-            brightness = self.max_brightness/100
-        elif brightness < self.min_brightness/100 or brightness < 0:
-            brightness = self.min_brightness/100
+        if self.brightness > self.max_brightness or self.brightness > 100:
+            self.brightness = self.max_brightness
+        elif self.brightness < self.min_brightness or self.brightness < 0:
+            self.brightness = self.min_brightness
         
-        # Convert RGB to range between 0 and 255 
-        r_led = math.floor(self.r / max(self.r,self.g,self.b) * brightness * 255)
-        g_led = math.floor(self.g / max(self.r,self.g,self.b) * brightness * 255)
-        b_led = math.floor(self.b / max(self.r,self.g,self.b) * brightness * 255)
+        # print("Results in "+ str(self.brightness));
+        # Convert RGB to range between 0 and 255
+        max_color_value = max(self.color[0],self.color[1],self.color[2]);
+        self.brightness_color[0] = math.floor(self.color[0] / max_color_value * self.brightness/100 * 255)
+        self.brightness_color[1] = math.floor(self.color[1] / max_color_value * self.brightness/100 * 255)
+        self.brightness_color[2] = math.floor(self.color[2] / max_color_value * self.brightness/100 * 255)
 
         # Check for each led (not the minute leds) if it should be turned on or off
         for i in range(2,self.total_pixels-2):
             if i in ledrange:
                 # Turn led on
-                self.ledstrip[i] = (r_led,g_led,b_led)
+                self.ledstrip[i] = tuple(self.brightness_color)
             else: 
                 # Turn led off
                 self.ledstrip[i] = (0,0,0)
@@ -84,7 +81,7 @@ class led_strip:
         # Check for each minute leds too
         for i in self.minute_led_numbers:
             if i in ledminuterange: 
-                self.ledstrip[i] = (r_led,g_led,b_led)
+                self.ledstrip[i] = tuple(self.brightness_color)
             else: 
                 self.ledstrip[i] = (0,0,0)
         
@@ -103,4 +100,3 @@ def loop_leds():
     for i in range(0,self.total_pixels):
         ledstrip[i] = (0,0,0)
     ledstrip.write()
-
