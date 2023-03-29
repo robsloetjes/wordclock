@@ -50,7 +50,7 @@ class Display:
         self.height = config.matrix_height
         self.ledstrip = ledstrip
         
-    def show_time(self, hour, minute):
+    def show_time(self, hour, minute, refresh_brightness = True):
         # Create range of all words that need to light up
         timeranges = self.timeranges.get_timerange(hour, minute)
         
@@ -76,17 +76,22 @@ class Display:
             else:
                 ledrange.append((x-1) * self.height + self.height -y + 2)
             
-        self.ledstrip.program_pixel(ledrange, ledminuterange)
+        self.ledstrip.program_pixel(ledrange, ledminuterange, True)
     
-    def show_prefix(self):
-        self.ledstrip.program_pixel(self.prefix, [])
+    def show_prefix(self, color = 3):
+        for led in self.prefix:
+            if color == 0:
+                self.ledstrip.ledstrip[led] = (self.ledstrip.brightness_color[0],0,0)
+            if color == 1:
+                self.ledstrip.ledstrip[led] = (0,self.ledstrip.brightness_color[1],0)
+            if color == 2:
+                self.ledstrip.ledstrip[led] = (0,0,self.ledstrip.brightness_color[2])
+            if color == 3:
+                self.ledstrip.ledstrip[led] = tuple(self.ledstrip.brightness_color)
+        self.ledstrip.ledstrip.write()
         
     def minute_leds(self):
-        self.ledstrip.program_pixel([],[self.width*self.height+3,1,self.width*self.height+2,0])
+        self.ledstrip.program_pixel([],[self.width*self.height+3,1,self.width*self.height+2,0], False)
         
     def show_prefix_and_minute_leds(self):
-        self.ledstrip.program_pixel(self.prefix, [self.width*self.height+3,1,self.width*self.height+2,0])
-
-
-
-
+        self.ledstrip.program_pixel(self.prefix, [self.width*self.height+3,1,self.width*self.height+2,0], False)
