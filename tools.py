@@ -20,17 +20,17 @@ def current_time():
         return 0,0,0
 
 def edit_config(old, new):
-    fin = open('config.py')
-    data = fin.read()
+    file = open('config.py')
+    data = file.read()
     data = data.replace(old, new)
-    fin.close()
+    file.close()
 
-    fin = open('config.py', 'w')
-    fin.write(data)
-    fin.close()
+    file = open('config.py', 'w')
+    file.write(data)
+    file.close()
 
 def save_color(old, new):
-    # print('led_color = '+str(old)+' changed in led_color = '+str(new))
+    #print('led_color = '+str(old)+' changed in led_color = '+str(new))
     edit_config('led_color = '+str(old),'led_color = '+str(new))
 
 def limit(value, min, max):
@@ -71,10 +71,18 @@ def set_time(display):
     for i in range(3):
         display.ledstrip.reset()
         time.sleep(wait_time_blinking)
-        display.show_prefix(3)
+        display.show_prefix()
         time.sleep(wait_time_blinking)
-    time.sleep(0.5)
     
+    if button_ok.value() == config.invert_button_ok:
+        # Button is still pushed, wait another second
+        time.sleep(1)
+        if button_ok.value() == config.invert_button_ok:
+            # Button is still pushed, enter set color mode
+            set_color(display)
+            # color is set, return to main script (skip setting time)
+            return
+
     print('Start set time mode')
     hour,minute,second = current_time()
     new_hour = hour
@@ -168,10 +176,21 @@ def set_time(display):
     # Write new time to RTC
     ds.Time([new_hour,new_minutes,0])
     
-    # Next step: set color values of leds (red, green and blue)
-    # Blink prefix and minute leds
-    
+    display.ledstrip.reset()
+    time.sleep(1)
+
+def set_color(display):
+  
+    # set color values of leds (red, green and blue)
+    wait_time_blinking = 0.2
+    button_back = Pin(config.button_back, Pin.IN, Pin.PULL_UP)
+    button_ok = Pin(config.button_ok, Pin.IN, Pin.PULL_UP)
+    button_next = Pin(config.button_next, Pin.IN, Pin.PULL_UP)
+
+    old_color = config.led_color[:]
+    # Loop all three colors (r,g,b)
     for i in range(3):
+        # Blink prefix and minute leds
         display.ledstrip.reset()
         for j in range(3):
             display.show_prefix(i) # Blink in color
@@ -179,20 +198,21 @@ def set_time(display):
             display.ledstrip.reset()
             time.sleep(wait_time_blinking)
         display.show_prefix()
+        display.show_minute_leds_in_color(i)
         
         print('Set value r/g/b ' + str(i))
-        old_color = config.led_color
-        print(str(old_color))
-        new_color = old_color
+
+        new_color = old_color[:]
         while button_ok.value() != config.invert_button_ok:
             if button_next.value() == config.invert_button_next:
                 new_color[i] += 5
                 if new_color[i] > 255:
                     new_color[i] = 255
                 save_color(old_color, new_color)
-                old_color = new_color
+                old_color = new_color[:]
                 display.ledstrip.renew_colors(new_color)
-                display.show_prefix_and_minute_leds()
+                display.show_prefix()
+                display.show_minute_leds_in_color(i)
                 time.sleep_ms(50)
         
             if button_back.value() == config.invert_button_back:
@@ -200,15 +220,12 @@ def set_time(display):
                 if new_color[i] < 0:
                     new_color[i]= 0
                 save_color(old_color, new_color)
-                old_color = new_color
+                old_color = new_color[:]
                 display.ledstrip.renew_colors(new_color)
-                display.show_prefix_and_minute_leds()   
+                display.show_prefix()
+                display.show_minute_leds_in_color(i)  
                 time.sleep_ms(50)
 
     # Ready setting up time and color value, reset the clock
     display.ledstrip.reset()
-    time.sleep(2)
-    display.show_time(new_hour,new_minutes)
-
-
-
+    time.sleep(1)
