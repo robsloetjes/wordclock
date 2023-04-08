@@ -39,7 +39,7 @@ class led_strip:
         if config.luxsensor:
             try:
                 if config.luxsensor_type == 'TSL2561':
-                    lux = luxsensor.read()
+                    lux = luxsensor.read()*2+10
                 else:
                     lux = bh1750.sample(i2c)
             except:
