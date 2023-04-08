@@ -46,6 +46,7 @@ class Display:
     def __init__(self, ledstrip):
         self.timeranges = layout()
         self.prefix = config.prefix
+        self.minute_led_numbers = config.minute_led_numbers
         self.width = config.matrix_width
         self.height = config.matrix_height
         self.ledstrip = ledstrip
@@ -78,20 +79,31 @@ class Display:
             
         self.ledstrip.program_pixel(ledrange, ledminuterange, True)
     
-    def show_prefix(self, color = 3):
+    def show_prefix(self, color_number = None):
+        color = [0, 0, 0]
+        
+        # Check if a primary color has to be shown, otherwise the regular color
+        if color_number == None:
+          color = self.ledstrip.color
+        else:
+          color = [0, 0, 0]
+          color[color_number] = 255
+          
         for led in self.prefix:
-            if color == 0:
-                self.ledstrip.ledstrip[led] = (self.ledstrip.brightness_color[0],0,0)
-            if color == 1:
-                self.ledstrip.ledstrip[led] = (0,self.ledstrip.brightness_color[1],0)
-            if color == 2:
-                self.ledstrip.ledstrip[led] = (0,0,self.ledstrip.brightness_color[2])
-            if color == 3:
-                self.ledstrip.ledstrip[led] = tuple(self.ledstrip.brightness_color)
+            self.ledstrip.ledstrip[led] = tuple(color)
+            
         self.ledstrip.ledstrip.write()
         
     def minute_leds(self):
-        self.ledstrip.program_pixel([],[self.width*self.height+3,1,self.width*self.height+2,0], False)
+        self.ledstrip.program_pixel([], self.minute_led_numbers, False)
         
     def show_prefix_and_minute_leds(self):
-        self.ledstrip.program_pixel(self.prefix, [self.width*self.height+3,1,self.width*self.height+2,0], False)
+        self.ledstrip.program_pixel(self.prefix, self.minute_led_numbers, False)
+    
+    def show_minute_leds_in_color(self, color_number):
+        color = [0, 0, 0]
+        color[color_number] = self.ledstrip.color[color_number]
+        for led in self.minute_led_numbers:
+          self.ledstrip.ledstrip[led] = tuple(color)
+          
+        self.ledstrip.ledstrip.write()
